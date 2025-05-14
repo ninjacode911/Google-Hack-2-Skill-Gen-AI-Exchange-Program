@@ -1,0 +1,18 @@
+from google.cloud import storage
+from PIL import Image
+import os
+
+# Set the path to your local image
+image_path = '/home/student/bouquet.jpeg'
+
+# Check if the image exists
+if os.path.exists(image_path):
+    print(f"Image found at {image_path}")
+    # Open the image using PIL (Python Imaging Library)
+    try:
+        img = Image.open(image_path)
+        img.show()  # Display the image
+    except Exception as e:
+        print(f"Error opening image: {e}")
+else:
+    print(f"Image not found at {image_path}")
